@@ -1,0 +1,6 @@
+{
+  "env": {
+    "MONGO_DEFAULT_DB": "shop",
+    "STRIPE_KEY": "sk_test_r6fNMIUPXh4U2ZvupdPk5jgf00VeFN1zIM"
+  }
+}

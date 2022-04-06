@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
-const stripe = require('stripe')('sk_test_r6fNMIUPXh4U2ZvupdPk5jgf00VeFN1zIM');
+const stripe = require('stripe')(process.env.STRIPE_KEY);
+'sk_test_r6fNMIUPXh4U2ZvupdPk5jgf00VeFN1zIM'
+var ProxyAgent = require('https-proxy-agent');
 
 const PDFDocument = require("pdfkit");
 
@@ -169,6 +171,7 @@ exports.getCheckout = (req, res, next) => {
     });
   })
   .catch((err) => {
+    console.log(err);
     const error = new Error(err);
     error.httpStatusCode = 500;
     return next(error);
